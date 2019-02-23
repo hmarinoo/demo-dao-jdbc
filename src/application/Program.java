@@ -44,18 +44,27 @@ public class Program {
 		
 		DepartmentDao depDao = DaoFactory.createDepartmentDao();
 		
-//		System.out.println("\n=== Test 1: Department insert" );
-//		Department newDep = new Department(null, "depInsert");
-//		depDao.insert(newDep);
-//		System.out.println(newDep.getId());
+		System.out.println("\n=== Test 1: Department insert" );
+		Department newDep = new Department(null, "depInsert");
+		depDao.insert(newDep);
+		System.out.println(newDep.getId());
 		
 		System.out.println("\n=== Test 2: Department find by Id" );
 		Department dep = depDao.findById(7);
 		System.out.println(dep);
 		
-		System.out.println("\n=== Test 2: Department find all" );
+		System.out.println("\n=== Test 3: Department find all" );
 		List<Department> departments = depDao.findAll();
 		departments.forEach(System.out::println);
+		
+		System.out.println("\n=== Test 4: Department update" );
+		dep = depDao.findById(8);
+		dep.setName("depUpdate");
+		depDao.update(dep);
+		
+		departments = depDao.findAll();
+		departments.forEach(System.out::println);
+		
 		
 		
 		
