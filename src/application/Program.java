@@ -1,14 +1,10 @@
 package application;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
-import model.dao.SellerDao;
 import model.entities.Department;
-import model.entities.Seller;
 
 public class Program {
 
@@ -48,14 +44,18 @@ public class Program {
 		
 		DepartmentDao depDao = DaoFactory.createDepartmentDao();
 		
-		System.out.println("\n=== Test 1: Department insert" );
-		Department newDep = new Department(null, "depInsert");
-		depDao.insert(newDep);
-		System.out.println(newDep.getId());
+//		System.out.println("\n=== Test 1: Department insert" );
+//		Department newDep = new Department(null, "depInsert");
+//		depDao.insert(newDep);
+//		System.out.println(newDep.getId());
 		
 		System.out.println("\n=== Test 2: Department find by Id" );
 		Department dep = depDao.findById(7);
 		System.out.println(dep);
+		
+		System.out.println("\n=== Test 2: Department find all" );
+		List<Department> departments = depDao.findAll();
+		departments.forEach(System.out::println);
 		
 		
 		
