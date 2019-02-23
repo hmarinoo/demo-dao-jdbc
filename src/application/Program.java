@@ -53,6 +53,12 @@ public class Program {
 		depDao.insert(newDep);
 		System.out.println(newDep.getId());
 		
+		System.out.println("\n=== Test 2: Department find by Id" );
+		Department dep = depDao.findById(7);
+		System.out.println(dep);
+		
+		
+		
 		
 		
 	}
